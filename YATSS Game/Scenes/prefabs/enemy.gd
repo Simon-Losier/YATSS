@@ -20,5 +20,4 @@ func take_damage(amount: float):
 		queue_free()
 
 func _on_area_3d_body_entered(body: Node3D):
-	print("hit")
 	take_damage(1)
