@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://0sb63y3tr1w8"]
+
+[ext_resource type="ArrayMesh" uid="uid://oxot3gdprdye" path="res://Assets/Models/character-human.obj" id="1_h3wt5"]
+
+[node name="Player" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0303564, 0, -1.18869)
+
+[node name="Character-human" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_h3wt5")
+skeleton = NodePath("../..")
