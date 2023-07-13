@@ -138,6 +138,10 @@ mesh = ExtResource("3_ydcqi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138144, 0, -4.47508)
 mesh = ExtResource("4_on6sx")
 
+[node name="Wall-opening2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.13814, 0, -1.47508)
+mesh = ExtResource("4_on6sx")
+
 [node name="Dirt" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86015, 0, -5.46958)
 mesh = ExtResource("5_afj02")
@@ -180,10 +184,6 @@ mesh = ExtResource("5_afj02")
 
 [node name="Wall-half23" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -3.13863, 0, -2.47043)
-mesh = ExtResource("3_ydcqi")
-
-[node name="Wall-half24" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -3.13863, 0, -1.47043)
 mesh = ExtResource("3_ydcqi")
 
 [node name="Dirt12" type="MeshInstance3D" parent="."]
