@@ -14,6 +14,7 @@ func _physics_process(delta):
 
 func take_damage(amount: float):
 	health = health - amount
+	$HitSound.play
 	if health <= 0:
 		dead.emit()
 		queue_free()

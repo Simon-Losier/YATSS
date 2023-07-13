@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsbgg5qi3ixyf"]
+[gd_scene load_steps=17 format=3 uid="uid://bsbgg5qi3ixyf"]
 
+[ext_resource type="AudioStream" uid="uid://bxu6r4wdj0ryb" path="res://Assets/Audio/Music/Juhani Junkala [Retro Game Music Pack] Level 3.wav" id="1_ug4fd"]
 [ext_resource type="PackedScene" uid="uid://bldgo1s3g4peq" path="res://Scenes/prefabs/rock.tscn" id="2_5iv2m"]
 [ext_resource type="ArrayMesh" uid="uid://bhb8r02yfiod5" path="res://Assets/Models/wall-half.obj" id="3_wju0h"]
 [ext_resource type="ArrayMesh" uid="uid://7bq361mlqsw5" path="res://Assets/Models/wall-opening.obj" id="4_3myqs"]
@@ -20,6 +21,11 @@ size = Vector3(1, 2.985, 13.335)
 [sub_resource type="NavigationMesh" id="NavigationMesh_cfpoi"]
 
 [node name="World" type="Node3D"]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ug4fd")
+volume_db = -23.588
+autoplay = true
 
 [node name="World" type="Node3D" parent="."]
 
@@ -249,7 +255,22 @@ mesh = ExtResource("6_s7r1k")
 skeleton = NodePath("../..")
 
 [node name="Stones20" type="MeshInstance3D" parent="World"]
-transform = Transform3D(0.352887, 0, -0.935666, 0, 1, 0, 0.935666, 0, 0.352887, 0.55377, 0.884521, 2.51615)
+transform = Transform3D(0.352887, 0, -0.935666, 0, 1, 0, 0.935666, 0, 0.352887, 0.55377, 0.884521, 1.91525)
+mesh = ExtResource("6_s7r1k")
+skeleton = NodePath("../..")
+
+[node name="Stones46" type="MeshInstance3D" parent="World"]
+transform = Transform3D(0.993894, 0, 0.110341, 0, 1, 0, -0.110341, 0, 0.993894, -1.57386, 0.884521, 1.91525)
+mesh = ExtResource("6_s7r1k")
+skeleton = NodePath("../..")
+
+[node name="Stones47" type="MeshInstance3D" parent="World"]
+transform = Transform3D(0.993894, 0, 0.110341, 0, 1, 0, -0.110341, 0, 0.993894, 4.29319, 0.884521, 1.78604)
+mesh = ExtResource("6_s7r1k")
+skeleton = NodePath("../..")
+
+[node name="Stones48" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-0.110341, 0, 0.993894, 0, 1, 0, -0.993894, 0, -0.110341, 6.41727, 0.87006, 1.82407)
 mesh = ExtResource("6_s7r1k")
 skeleton = NodePath("../..")
 
@@ -2214,6 +2235,9 @@ light_color = Color(0.592157, 0.568627, 1, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.382683, 0.92388, 0, -0.92388, 0.382683, 2.226, 4.893, 0.837)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
+current = true
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("8_4skty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62618, 0.126522, -1.41606)

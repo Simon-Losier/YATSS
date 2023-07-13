@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://be3i4vl7qm1fv"]
+[gd_scene load_steps=6 format=3 uid="uid://be3i4vl7qm1fv"]
 
 [ext_resource type="ArrayMesh" uid="uid://b33ge4r6qi1by" path="res://Assets/Models/character-orc.obj" id="1_2rflp"]
 [ext_resource type="Script" path="res://Scenes/prefabs/enemy.gd" id="1_yaidv"]
+[ext_resource type="AudioStream" uid="uid://camrnihrapvw6" path="res://Assets/Audio/FX291.mp3" id="3_yxai4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aij5x"]
 radius = 0.21
@@ -27,5 +28,8 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482131, 0.0240019)
 shape = SubResource("BoxShape3D_76mq6")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yxai4")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
