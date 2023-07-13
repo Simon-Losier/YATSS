@@ -2,6 +2,7 @@ extends Node3D
 
 func shoot(direction: String):
 	# Shoot projectile
+	$ShootSound.play()
 	var prefab = load("res://Scenes/prefabs/Projectile.tscn")
 	var projectile = prefab.instantiate()
 	projectile.set_name("projectile")

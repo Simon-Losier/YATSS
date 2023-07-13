@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0c7xuyq4han4"]
+[gd_scene load_steps=6 format=3 uid="uid://b0c7xuyq4han4"]
 
 [ext_resource type="Script" path="res://Scenes/prefabs/testPlayer.gd" id="1_chmh4"]
 [ext_resource type="ArrayMesh" uid="uid://oxot3gdprdye" path="res://Assets/Models/character-human.obj" id="2_x4021"]
 [ext_resource type="Script" path="res://Scenes/prefabs/shooting.gd" id="3_eq8uo"]
+[ext_resource type="AudioStream" uid="uid://d1v883cx6vdjo" path="res://Assets/Audio/FX292.mp3" id="4_vy8x8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j0q4l"]
 radius = 0.3
@@ -21,3 +22,6 @@ mesh = ExtResource("2_x4021")
 [node name="shootPoint" type="Node3D" parent="Character-human"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482116, 0.51386)
 script = ExtResource("3_eq8uo")
+
+[node name="ShootSound" type="AudioStreamPlayer3D" parent="Character-human/shootPoint"]
+stream = ExtResource("4_vy8x8")
