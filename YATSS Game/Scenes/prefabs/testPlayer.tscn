@@ -19,5 +19,5 @@ shape = SubResource("CapsuleShape3D_j0q4l")
 mesh = ExtResource("2_x4021")
 
 [node name="shootPoint" type="Node3D" parent="Character-human"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482116, 0.325576)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482116, 0.51386)
 script = ExtResource("3_eq8uo")

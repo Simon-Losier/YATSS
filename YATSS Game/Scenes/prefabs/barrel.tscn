@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cht3g2k5fl5ti"]
+
+[ext_resource type="ArrayMesh" uid="uid://b3d08yv0xfy1j" path="res://Assets/Models/barrel.obj" id="1_xmabn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c88ix"]
+size = Vector3(0.51, 0.485, 0.51)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="Barrel" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_xmabn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00280237, 0.238212, 0)
+shape = SubResource("BoxShape3D_c88ix")

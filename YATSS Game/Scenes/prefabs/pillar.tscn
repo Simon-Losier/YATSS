@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://duee4cm4roetl"]
+
+[ext_resource type="ArrayMesh" uid="uid://dl6dfqr4xrbkh" path="res://Assets/Models/column.obj" id="1_m5fht"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dw3xu"]
+size = Vector3(0.505, 1.1, 0.5)
+
+[node name="Pillar" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13176, 0.0244532, -0.0143151)
+
+[node name="Column2" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_m5fht")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.549038, 0)
+shape = SubResource("BoxShape3D_dw3xu")

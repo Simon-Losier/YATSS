@@ -8,28 +8,31 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var model = $"Character-human"
+@onready var shoot_point = $"Character-human/shootPoint"
+
 func _ready():
 	var look_direction: Vector2 = Vector2.DOWN # Look right
 	model.rotation.y = look_direction.angle()
-	
 func rotation():
 	var input = false
 	var look_direction: Vector2 = Vector2.ZERO
 	# Trial an error
 	if Input.is_action_just_pressed("shoot_up"):
 		look_direction = Vector2.LEFT
-		input = true
+		model.rotation.y = look_direction.angle()
+		shoot_point.shoot("up")
 	if Input.is_action_just_pressed("shoot_down"):
 		look_direction = Vector2.RIGHT
-		input = true
+		model.rotation.y = look_direction.angle()
+		shoot_point.shoot("down")
 	if Input.is_action_just_pressed("shoot_left"):
 		look_direction = Vector2.UP
-		input = true
+		model.rotation.y = look_direction.angle()
+		shoot_point.shoot("left")
 	if Input.is_action_just_pressed("shoot_right"):
 		look_direction = Vector2.DOWN
-		input = true
-	if input:
 		model.rotation.y = look_direction.angle()
+		shoot_point.shoot("right")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -38,7 +41,7 @@ func _physics_process(delta):
 
 	# Handle rotation
 	rotation()
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
