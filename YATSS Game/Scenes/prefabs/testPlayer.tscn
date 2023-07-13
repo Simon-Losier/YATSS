@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0c7xuyq4han4"]
+
+[ext_resource type="Script" path="res://Scenes/prefabs/testPlayer.gd" id="1_chmh4"]
+[ext_resource type="ArrayMesh" uid="uid://oxot3gdprdye" path="res://Assets/Models/character-human.obj" id="2_x4021"]
+[ext_resource type="Script" path="res://Scenes/prefabs/shooting.gd" id="3_eq8uo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j0q4l"]
+radius = 0.3
+height = 1.0
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_chmh4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00156033, 0.416758, -0.00657344)
+shape = SubResource("CapsuleShape3D_j0q4l")
+
+[node name="Character-human" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_x4021")
+
+[node name="shootPoint" type="Node3D" parent="Character-human"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482116, 0.325576)
+script = ExtResource("3_eq8uo")

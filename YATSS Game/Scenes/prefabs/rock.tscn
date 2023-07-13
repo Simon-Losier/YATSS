@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bldgo1s3g4peq"]
+
+[ext_resource type="ArrayMesh" uid="uid://dyhm1xogikq68" path="res://Assets/Models/rocks.obj" id="1_l8eg8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1d676"]
+
+[node name="Rock" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89216, -0.475548, -2.4459)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1d676")
+
+[node name="Rocks9" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_l8eg8")
+skeleton = NodePath("../..")

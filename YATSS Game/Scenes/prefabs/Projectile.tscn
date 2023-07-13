@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvdjjgnbe7hhr"]
+
+[ext_resource type="Script" path="res://Scenes/prefabs/goForward.gd" id="1_s15sl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t1h6h"]
+radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x616v"]
+albedo_color = Color(0.109804, 0.988235, 0.760784, 1)
+emission_enabled = true
+emission = Color(0.109804, 0.988235, 0.760784, 1)
+emission_energy_multiplier = 4.87
+
+[node name="Projectile" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+script = ExtResource("1_s15sl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_t1h6h")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RigidBody3D"]
+light_color = Color(0.109804, 0.988235, 0.760784, 1)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="RigidBody3D"]
+material_override = SubResource("StandardMaterial3D_x616v")
+radius = 0.1

@@ -1,10 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://0sb63y3tr1w8"]
+[gd_scene load_steps=6 format=3 uid="uid://0sb63y3tr1w8"]
 
 [ext_resource type="ArrayMesh" uid="uid://oxot3gdprdye" path="res://Assets/Models/character-human.obj" id="1_h3wt5"]
+[ext_resource type="Script" path="res://Scenes/prefabs/Player.gd" id="1_s0lgp"]
+[ext_resource type="Script" path="res://Scenes/prefabs/shooting.gd" id="3_hlfnq"]
+[ext_resource type="Script" path="res://Scenes/prefabs/movement.gd" id="4_13kuk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m0w38"]
+radius = 0.3
+height = 0.8
 
 [node name="Player" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0303564, 0, -1.18869)
+script = ExtResource("1_s0lgp")
 
 [node name="Character-human" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_h3wt5")
 skeleton = NodePath("../..")
+
+[node name="Shooting" type="Node3D" parent="."]
+script = ExtResource("3_hlfnq")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("4_13kuk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.367309, 0)
+shape = SubResource("CapsuleShape3D_m0w38")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.367309, 0)
